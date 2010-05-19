@@ -8,7 +8,7 @@ describe OAuth2::Server::Request do
 
     it "instantiates a request, then validates and returns it" do
       attributes = {:foo => :bar}
-      request = subject.new(attributes) {}
+      request = subject.new(attributes)
 
       subject.should_receive(:new).with(attributes).
                               once.and_return(request)
@@ -21,7 +21,7 @@ describe OAuth2::Server::Request do
     
   end
   
-  subject { OAuth2::Server::Request.new {} }
+  subject { OAuth2::Server::Request.new }
   
   it { should have_attribute(:request_uri) }
   it { should have_attribute(:host_with_port) }
